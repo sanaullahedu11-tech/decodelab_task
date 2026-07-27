@@ -1,0 +1,20 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Display project files
+        run: ls -la
+
+      - name: Verify HTML file exists
+        run: test -f index.html
